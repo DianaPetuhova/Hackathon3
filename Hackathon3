@@ -1,0 +1,16 @@
+src/routes/chat.$threadId.tsx
+182
+183
+184
+185
+186
+187
+188
+      const firstUser = msgs.find((m) => m.role === "user");
+      const title =
+        t.title === "New investigation" && firstUser
+          ? messageText(firstUser).split("\n")[0].slice(0, 48) || t.title
+          ? (messageText(firstUser).split("\n")[0] ?? "").slice(0, 48) || t.title
+          : t.title;
+      onChange({ ...t, title, messages: msgs, updatedAt: Date.now() });
+    },
